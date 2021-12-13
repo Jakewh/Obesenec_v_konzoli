@@ -9,6 +9,8 @@
     -střední (slova o pěti písmenech)
     -těžká (slova o osmi písmenech)
  -Grafické znázornění pozice uhodnutých písmen.
+ 
+ Chystané změny:
  -Grafické znázornění "oběšení".
 
 Jakub Kolář
