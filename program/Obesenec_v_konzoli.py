@@ -24,10 +24,10 @@ konec = "Už se houpeš ve větru! Snad příště cizinče."
 spatne_pokusy = 0
 dobre_pokusy = 0
 spatna_pismena = []
-pokus1 = "\t""――――――――"
-pokus2 = "\t""∩""\n""\t""――――――――"
-pokus3 = "\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""∩""\n""\t""――――――――"
-pokus4 = "\t""――――――――――""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""∩""\n""\t""――――――――"
+#pokus1 = "\t""――――――――"
+#pokus2 = "\t""∩""\n""\t""――――――――"
+#pokus3 = "\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""∩""\n""\t""――――――――"
+#pokus4 = "\t""――――――――――""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""∩""\n""\t""――――――――"
 #pokus5 = 
 #pokus6 = 
 #pokus7 = 
@@ -38,7 +38,8 @@ pokus4 = "\t""――――――――――""\n""\t""।""\n""\t""।""\n""\t""
 
 # Uvítání a volba obtížnosti
 print("Vítám tě cizinče ve hře ’Obešenec v konzoli’. Dokážeš uhádnout celé slovo?\nNebo se budeš bezvládně houpat na kusu dřeva?")
-print("Zvol si obtížnost a uvidíme:")
+input("Pokud se nebojíš, stiskni klávesu.")
+print("Zvol si obtížnost:")
 print("1)lehká - slovo o třech písmenech\n2)střední - slovo o pěti písmenech\n3)těžká - slovo o osmi písmenech")
 obtiznost = int(input("Tak kterou?: "))
 
@@ -65,11 +66,12 @@ if obtiznost == 1:
             if pismeno in spatna_pismena:
                 print("Tohle už jsi zkoušel a neprošlo ti to červe!")
             spatna_pismena.append(pismeno)
-            spatne_pokusy += 1            
+            spatne_pokusy += 1
             if spatne_pokusy == 11:
                 print(konec)
                 print("Slovo které tě zabilo je", "".join(slovo),".")
                 break
+            print("Jetě", 11 - spatne_pokusy, "x špatně, a je po tobě.")
 # Střední obtiznost
 elif obtiznost == 2:
     print("Dobrá volba, ale máš na to?.\nJaké písmeno tipuješ?")
@@ -85,7 +87,7 @@ elif obtiznost == 2:
             dobre_pokusy += 1
             if dobre_pokusy == 5:   # Když odhalíme všech pět písmen
                 print(gratulace)
-                break    
+                break
         else:
             print("Tohle není dobře")
             if pismeno in spatna_pismena:
@@ -96,6 +98,7 @@ elif obtiznost == 2:
                 print(konec)
                 print("Slovo které tě zabilo je", "".join(slovo),".")
                 break
+            print("Jetě", 11 - spatne_pokusy, "x špatně, a je po tobě.")
 # Těžká obtížnost
 elif obtiznost == 3:
     print("HAHA. Ty si myslíš že mě porazíš? Tak se ukaž!.\nJaké písmeno tipuješ?")
@@ -122,6 +125,7 @@ elif obtiznost == 3:
                 print(konec)
                 print("Slovo které tě zabilo je", "".join(slovo),".")
                 break
+            print("Jetě", 11 - spatne_pokusy, "x špatně, a je po tobě.")
 else:
     print("Tahle možnost není možná. Čti pořádně cizinče")
 input()
