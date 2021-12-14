@@ -24,17 +24,6 @@ konec = "Už se houpeš ve větru! Snad příště cizinče."
 spatne_pokusy = 0
 dobre_pokusy = 0
 spatna_pismena = []
-#pokus1 = "\t""――――――――"
-#pokus2 = "\t""∩""\n""\t""――――――――"
-#pokus3 = "\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""∩""\n""\t""――――――――"
-#pokus4 = "\t""――――――――――""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""।""\n""\t""∩""\n""\t""――――――――"
-#pokus5 = 
-#pokus6 = 
-#pokus7 = 
-#pokus8 = 
-#pokus9 = 
-#pokus10 = 
-#pokus11 = 
 
 # Uvítání a volba obtížnosti
 print("Vítám tě cizinče ve hře ’Obešenec v konzoli’. Dokážeš uhádnout celé slovo?\nNebo se budeš bezvládně houpat na kusu dřeva?")
