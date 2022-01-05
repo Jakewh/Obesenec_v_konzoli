@@ -25,6 +25,21 @@ spatne_pokusy = 0
 dobre_pokusy = 0
 spatna_pismena = []
 
+print("""
+  ___  _                                            
+ / _ \| |__   ___  ___  ___ _ __   ___  ___  __   __
+| | | | '_ \ / _ \/ __|/ _ \ '_ \ / _ \/ __| \ \ / /
+| |_| | |_) |  __/\__ \  __/ | | |  __/ (__   \ V / 
+ \___/|_.__/ \___||___/\___|_| |_|\___|\___|   \_/  
+                                                    
+ _                        _ _ 
+| | _____  _ __  _______ | (_)
+| |/ / _ \| '_ \|_  / _ \| | |
+|   < (_) | | | |/ / (_) | | |
+|_|\_\___/|_| |_/___\___/|_|_|
+                              
+""")
+
 # Uvítání a volba obtížnosti
 print("Vítám tě cizinče ve hře ’Obešenec v konzoli’. Dokážeš uhádnout celé slovo?\nNebo se budeš bezvládně houpat na kusu dřeva?")
 input("Pokud se nebojíš, stiskni klávesu.")
@@ -112,9 +127,10 @@ elif obtiznost == 3:
             spatne_pokusy += 1
             if spatne_pokusy == 11:
                 print(konec)
-                print("Slovo které tě zabilo je", "".join(slovo),".")
+                print("\nSlovo které tě zabilo je", "".join(slovo),".")
                 break
             print("Jetě", 11 - spatne_pokusy, "x špatně, a je po tobě.")
 else:
     print("Tahle možnost není možná. Čti pořádně cizinče")
+print("\n***Hacker Ninjas North 2022***")
 input()
