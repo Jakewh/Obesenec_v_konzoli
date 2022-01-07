@@ -31,7 +31,7 @@ print("""
 | | _____  _ __  _______ | (_)
 | |/ / _ \| '_ \|_  / _ \| | |
 |   < (_) | | | |/ / (_) | | |
-|_|\_\___/|_| |_/___\___/|_|_|
+|_|\_\___/|_| |_/___\___/|_|_|v1
                               
 """)
 
@@ -41,9 +41,7 @@ dobre_pokusy = 0
 tipovana_pismena = []
 
 def hadani():
-    """
-    smyčka hádání písmen
-    """
+    """smyčka hádání písmen"""
     global pismeno
     global dobre_pokusy
     global spatne_pokusy
