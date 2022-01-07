@@ -1,5 +1,20 @@
 import random
 
+print("""
+  ___  _                                            
+ / _ \| |__   ___  ___  ___ _ __   ___  ___  __   __
+| | | | '_ \ / _ \/ __|/ _ \ '_ \ / _ \/ __| \ \ / /
+| |_| | |_) |  __/\__ \  __/ | | |  __/ (__   \ V / 
+ \___/|_.__/ \___||___/\___|_| |_|\___|\___|   \_/  
+                                                    
+ _                        _ _ 
+| | _____  _ __  _______ | (_)
+| |/ / _ \| '_ \|_  / _ \| | |
+|   < (_) | | | |/ / (_) | | |
+|_|\_\___/|_| |_/___\___/|_|_|v1
+                              
+""")
+
 # Seznamy o 25 slovech ve třech obtížnostech
 lehka = [
     "pes", "les", "výr", "věk", "dům", "nor", "oči", "páv", "tuk", "brk", 
@@ -19,22 +34,6 @@ tezka = [
 
 gratulace = "Tentokrát jsi vyvázl a tvůj bídný život zůstal ušetřen!"
 konec = "Už se houpeš ve větru! Snad příště cizinče."
-
-print("""
-  ___  _                                            
- / _ \| |__   ___  ___  ___ _ __   ___  ___  __   __
-| | | | '_ \ / _ \/ __|/ _ \ '_ \ / _ \/ __| \ \ / /
-| |_| | |_) |  __/\__ \  __/ | | |  __/ (__   \ V / 
- \___/|_.__/ \___||___/\___|_| |_|\___|\___|   \_/  
-                                                    
- _                        _ _ 
-| | _____  _ __  _______ | (_)
-| |/ / _ \| '_ \|_  / _ \| | |
-|   < (_) | | | |/ / (_) | | |
-|_|\_\___/|_| |_/___\___/|_|_|v1
-                              
-""")
-
 # Počet pokusů. 11 je smrt
 spatne_pokusy = 0
 dobre_pokusy = 0
@@ -74,47 +73,29 @@ if obtiznost == 1:
     print("Začínáš zlehka. Uvidíme co dokážeš.")
     slovo = list(random.choice(lehka))    # Náhodný výběr slova a přiřazení do seznamu
     sablona = ["_", "_", "_"]   # Šablona slova. Podrtžítka budeme nahrazovat písmeny
-    znovu = True
-    while znovu:
-        hadani()
-        if dobre_pokusy == 3:   # Když odhalíme všechny tři písmena
-            print(gratulace)
-            break
-        if spatne_pokusy == 11:
-            print("Slovo které tě zabilo je", "".join(slovo),".")
-            break
 # Střední obtiznost
 elif obtiznost == 2:
     print("Dobrá volba, ale máš na to?.")
     slovo = list(random.choice(stredni))    # Náhodný výběr slova a přiřazení do seznamu
     sablona = ["_", "_", "_", "_", "_"]   # Šablona slova. Podrtžítka budeme nahrazovat písmeny
-    znovu = True
-    while znovu:
-        hadani()
-        if dobre_pokusy == 5:   # Když odhalíme všech pět písmen
-            print(gratulace)
-            break
-        if spatne_pokusy == 11:
-            print("Slovo které tě zabilo je", "".join(slovo),".")
-            break
-        print("Jetě", 11 - spatne_pokusy, "x špatně, a je po tobě.")
 # Těžká obtížnost
 elif obtiznost == 3:
     print("HAHA. Ty si myslíš že mě porazíš? Tak se ukaž!.")
     slovo = list(random.choice(tezka))    # Náhodný výběr slova a přiřazení do seznamu
     sablona = ["_", "_", "_", "_", "_", "_", "_", "_"]   # Šablona slova. Podrtžítka budeme nahrazovat písmeny
     znovu = True
-    while znovu:
-        hadani()
-        if dobre_pokusy == 8:   # Když odhalíme všech osm písmen
-            print(gratulace)
-            break    
-        if spatne_pokusy == 11:
-            print(konec)
-            print("\nSlovo které tě zabilo je", "".join(slovo),".")
-            break
-        print("Jetě", 11 - spatne_pokusy, "x špatně, a je po tobě.")
 else:
     print("Tahle možnost není možná. Čti pořádně cizinče")
+# smyčka hry
+znovu = True
+while znovu:
+    hadani()
+    if dobre_pokusy == len(slovo):   # Když odhalíme všechna písmena
+        print(gratulace)
+        break
+    if spatne_pokusy == 11:
+        print(konec)
+        print("Slovo které tě zabilo je", "".join(slovo),".")
+        break
 print("\n***Hacker Ninjas North 2022***")
 input()
