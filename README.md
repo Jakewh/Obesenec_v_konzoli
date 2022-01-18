@@ -1,6 +1,6 @@
 # Projekt - obesenec v konzoli
  
- První zkušební projekt po asi třech týdnech učení programování v Pythonu.
+ První zkušební projekt
 
  Popis:
  -Klasická hra oběšenec v jednoduchém konzolém podání.
